@@ -111,7 +111,7 @@ download_xui(){
     fi
     
     if [ $# == 0 ]; then
-        last_version=$(curl -Ls "https://api.github.com/repos/taffychan/x-ui-3/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/') || last_version=$(curl -sm8 https://raw.githubusercontent.com/taffychan/x-ui-3/main/config/version >/dev/null 2>&1)
+        last_version="0.3.6.8.1"
         if [[ -z "$last_version" ]]; then
             red "检测 x-ui 版本失败，请确保你的服务器能够连接 Github API"
             rm -f install.sh
